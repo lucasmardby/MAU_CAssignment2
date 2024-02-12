@@ -27,7 +27,7 @@
             var validInput = false;
             string text;
 
-            do
+            do // makes sure user input is not null
             {
                 text = Console.ReadLine();
                 if (text != null)
@@ -39,7 +39,8 @@
                     Console.WriteLine("Try again. Enter a sententce to move forward!");
                 }
             } while (validInput == false);
-
+            
+            //prints the sentence in all-caps and its length 
             int length = text.Length;
 
             Console.WriteLine();
@@ -60,7 +61,7 @@
             string readResult;
             int menuChoice = 0;
 
-            do
+            do //checks for valid user input, for a number between 1 and 7
             {
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
@@ -79,6 +80,7 @@
                 }
             } while (validInput == false);
 
+            //switch case with lines for the seven days
             switch (menuChoice)
             {
                 case 1:
@@ -113,7 +115,7 @@
             bool validInput = true;
             bool answer = false;
 
-            //loop to make sure user input is a valid yes or no
+            //checks for valid user input
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();

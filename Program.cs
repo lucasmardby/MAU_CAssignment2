@@ -1,7 +1,12 @@
 ﻿namespace MaU_C__Assignment2
 {
+    //Assignment 2: Iteration and Selection Algorithms, by Lucas Mårdby
+
     internal class Program
     {
+        //Console app Main Menu,
+        //Menu display method, loop that asks user after every Class Method if they want to exit or not.
+
         static void Main(string[] args)
         {
             do
@@ -10,10 +15,7 @@
             } while (ExitApplication() == false);
         }
 
-        /* TO-DO
-         - finish writing weekday lines
-         */
-        public static void MainMenu()
+        private static void MainMenu()
         {
             Console.Clear();
             Console.WriteLine("--------------------");
@@ -29,6 +31,7 @@
 
         private static void MenuChoices()
         {
+            //check for valid user input
             int menuChoice = 0;
             string readResult;
             var validInput = false;
@@ -48,6 +51,7 @@
                 }
             } while (validInput == false);
 
+            //switch case into the different class methods
             switch (menuChoice)
             {
                 case 1:
@@ -71,8 +75,9 @@
                     scheduleObj.SchedulerStart();
                     break;
             }
-
         }
+
+        //method returning if user wants to exit or not
         private static bool ExitApplication()
         {
             Console.Clear();
@@ -82,7 +87,7 @@
             bool validInput = true;
             bool answer = false;
 
-            //loop to make sure user input is a valid yes or no
+            //check for valid user input
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();

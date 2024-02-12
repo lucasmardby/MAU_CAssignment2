@@ -24,7 +24,7 @@
             string readResult;
             var validInput = false;
 
-            do
+            do //check for valid user input, only taking 0, 1, or 2
             {
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
@@ -44,7 +44,6 @@
             } while (validInput == false);
 
             const int endWeek = 52;
-
             switch (menuChoice)
             {
                 case 1:
@@ -65,12 +64,9 @@
             }
             
         }
-        private static void UserInput()
-        { 
-        
-        }
         private static void DisplayWorkSchedule(int startWeek, int endWeek, int intervals)
         {
+            //one method to display schedule based on input parameters
             int counter = 0;
 
             for (int i = startWeek; startWeek <= endWeek; i++)

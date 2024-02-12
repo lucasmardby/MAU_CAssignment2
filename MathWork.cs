@@ -13,6 +13,7 @@
 
         private static void Calculate()
         {
+            //takes two user input numbers
             Console.WriteLine();
             Console.WriteLine("Give me two numbers!");
             
@@ -21,6 +22,7 @@
             Console.Write("and the second number: ");
             int numberTwo = Convert.ToInt32(Console.ReadLine());
 
+            //set start and end numbers based on size
             int startNumber;
             int endNumber;
             if (numberOne < numberTwo)
@@ -34,6 +36,7 @@
                 startNumber = numberTwo;
             }
 
+            //following methods, taking these integers as parameters
             Console.WriteLine($"The sum of numbers between {startNumber} and {endNumber} is {SumNumbers(startNumber, endNumber)}");
             PrintEvenNumbers(startNumber, endNumber);
             PrintOddNumbers(startNumber, endNumber);
@@ -41,6 +44,7 @@
         }
         private static int SumNumbers(int start, int end)
         {
+            //calculates the sum of all numbers between start and end numbers
             int sum = 0;
 
             for (int i = 0; start <= end; i++)
@@ -52,9 +56,9 @@
             return sum;
         }
 
-        //Even and Odd into one method??
         private static void PrintEvenNumbers(int num1, int num2)
         {
+            //prints all even numbers between start and end numbers
             Console.WriteLine();
             Console.WriteLine($"****Even numbers between {num1} and {num2}");
 
@@ -71,6 +75,7 @@
         }
         private static void PrintOddNumbers(int num1, int num2)
         {
+            //prints all odd numbers between start and end numbers
             Console.WriteLine();
             Console.WriteLine($"****Odd numbers between {num1} and {num2}");
 
@@ -90,10 +95,9 @@
             Console.WriteLine();
             Console.WriteLine($"**** Square Roots ****");
 
+            //nested loop calculating the square root of all numbers between start and end numbers 
             for (int i = 0; num1 <= num2; i++)
             {
-                // if-statement to get the proper distance and spacing of the printed numbers 
-                // ----Make more detailed, depending on the largest number?
                 if (num1.ToString().Length == 1)
                 {
                     Console.Write($"Sqrt(  {num1} to {num2})");
@@ -105,9 +109,9 @@
 
                 for (int j = num1; j <= num2; j++)
                 {
-                    double sqrtValue = Math.Sqrt(j);
-                    double roundValue = Math.Round(sqrtValue, 2, MidpointRounding.AwayFromZero);
-                    Console.Write($"  {roundValue:0.00}");
+                    double sqrtValue = Math.Sqrt(j); //square root of value
+                    double roundValue = Math.Round(sqrtValue, 2, MidpointRounding.AwayFromZero); //round down
+                    Console.Write($"  {roundValue:0.00}"); //and display with the correct amount of decimals
                 }
                 Console.WriteLine();
                 num1++;
@@ -121,7 +125,7 @@
             bool validInput = true;
             bool answer = false;
 
-            //loop to make sure user input is a valid yes or no
+            //check for valid user input
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();

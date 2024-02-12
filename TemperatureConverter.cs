@@ -33,6 +33,7 @@
 
             do
             {
+                //check for valid user input
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
                 if (int.TryParse(readResult, out _))
@@ -67,7 +68,8 @@
             }
         }
 
-        //turn into one method with params
+        //two methods for conversion, adjusting the values, conversion calculations, and display intervals
+
         private static void FahrenheitToCelcius()
         {
             Console.WriteLine();
@@ -98,7 +100,7 @@
             Console.WriteLine();
 
             int celsius = 0;
-            int p = 0;
+            int counter = 0;
             int columns = 3;
 
             for (var i = 0; celsius <= 100; i++)
@@ -107,8 +109,8 @@
                 string textOut = string.Format($"{celsius,16:f2} C = {fahrenheit,6:f2} F");
 
                 Console.Write(textOut);
-                p++;
-                if ((p % columns == 0) && (p >= columns))
+                counter++;
+                if ((counter % columns == 0) && (counter >= columns))
                 {
                     Console.WriteLine();
                 }

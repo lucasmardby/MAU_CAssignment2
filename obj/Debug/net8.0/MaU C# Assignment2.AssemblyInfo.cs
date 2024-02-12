@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MaU C# Assignment2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaecde8888a3d8970ea38d4e6afafba4a5fff12c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bda6c375c2af9758a527ae88012e9e179d7cff2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MaU C# Assignment2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MaU C# Assignment2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
