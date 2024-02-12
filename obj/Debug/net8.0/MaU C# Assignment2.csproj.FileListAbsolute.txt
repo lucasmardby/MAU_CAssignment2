@@ -1,0 +1,14 @@
+E:\Code\MaU C# Assignment2\bin\Debug\net8.0\MaU C# Assignment2.exe
+E:\Code\MaU C# Assignment2\bin\Debug\net8.0\MaU C# Assignment2.deps.json
+E:\Code\MaU C# Assignment2\bin\Debug\net8.0\MaU C# Assignment2.runtimeconfig.json
+E:\Code\MaU C# Assignment2\bin\Debug\net8.0\MaU C# Assignment2.dll
+E:\Code\MaU C# Assignment2\bin\Debug\net8.0\MaU C# Assignment2.pdb
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.GeneratedMSBuildEditorConfig.editorconfig
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.AssemblyInfoInputs.cache
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.AssemblyInfo.cs
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.csproj.CoreCompileInputs.cache
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.dll
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\refint\MaU C# Assignment2.dll
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.pdb
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\MaU C# Assignment2.genruntimeconfig.cache
+E:\Code\MaU C# Assignment2\obj\Debug\net8.0\ref\MaU C# Assignment2.dll
