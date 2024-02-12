@@ -81,30 +81,28 @@
 
             switch (menuChoice)
             {
-                //add lines for the days
                 case 1:
                     Console.WriteLine("Monday! A new week filled with new opportunities!");
                     break;
                 case 2:
-                    Console.WriteLine("Tuesday!");
+                    Console.WriteLine("Tuesday! You're doing great, keep on pushing through!");
                     break;
                 case 3:
-                    Console.WriteLine("Wednesday!");
+                    Console.WriteLine("Wednesday, peak of the week. It's all downhill from here!");
                     break;
                 case 4:
-                    Console.WriteLine("Thursday!");
+                    Console.WriteLine("Thursday! One more day, give youself some compliments!");
                     break;
                 case 5:
-                    Console.WriteLine("Friday!");
+                    Console.WriteLine("Friday, great job! Your well-deserved weekend awaits!");
                     break;
                 case 6:
-                    Console.WriteLine("Saturday!");
+                    Console.WriteLine("Saturday! Time to make some fun, lasting memories!");
                     break;
                 case 7:
-                    Console.WriteLine("Sunday!");
+                    Console.WriteLine("Sunday, a treat! What will you look forward to next week?");
                     break;
             }
-
         }
 
         private static bool RunAgain()

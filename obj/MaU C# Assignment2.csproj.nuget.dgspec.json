@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Code\\MaU C# Assignment2\\MaU C# Assignment2.csproj": {}
+    "E:\\Code\\MAU_CAssignment2\\MAU_CAssignment2\\MaU C# Assignment2.csproj": {}
   },
   "projects": {
-    "E:\\Code\\MaU C# Assignment2\\MaU C# Assignment2.csproj": {
+    "E:\\Code\\MAU_CAssignment2\\MAU_CAssignment2\\MaU C# Assignment2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\MaU C# Assignment2\\MaU C# Assignment2.csproj",
+        "projectUniqueName": "E:\\Code\\MAU_CAssignment2\\MAU_CAssignment2\\MaU C# Assignment2.csproj",
         "projectName": "MaU C# Assignment2",
-        "projectPath": "E:\\Code\\MaU C# Assignment2\\MaU C# Assignment2.csproj",
+        "projectPath": "E:\\Code\\MAU_CAssignment2\\MAU_CAssignment2\\MaU C# Assignment2.csproj",
         "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\MaU C# Assignment2\\obj\\",
+        "outputPath": "E:\\Code\\MAU_CAssignment2\\MAU_CAssignment2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
