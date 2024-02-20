@@ -2,10 +2,17 @@
 {
     internal class Scheduler
     {
+        /// <summary>
+        /// Start Method, creating the Main Menu as long as the user wants to keep it open
+        /// </summary>
         public void SchedulerStart()
         {
             MainMenu();
         }
+
+        /// <summary>
+        /// Prints the application Main Menu, before going into the MenuChoices() method
+        /// </summary>
         private void MainMenu()
         {
             Console.WriteLine("++++++++++ The Scheduler ++++++++++");
@@ -18,13 +25,18 @@
 
             MenuChoices();
         }
+
+        /// <summary>
+        /// Main Menu choices, taking user input into a switch case, 
+        /// leading into the class methods for scheduling
+        /// </summary>
         private void MenuChoices()
         {
             int menuChoice = 0;
             string readResult;
             var validInput = false;
 
-            do //check for valid user input, only taking 0, 1, or 2
+            do
             {
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
@@ -62,11 +74,16 @@
                     Console.Clear();
                     break;
             }
-            
         }
+
+        /// <summary>
+        /// Takes parameters for scheduling, and prints out the working schedule based on this.
+        /// </summary>
+        /// <param name="startWeek">Starting param, from where the scheduling begins</param>
+        /// <param name="endWeek">Ending param, until where the scheduling it counted</param>
+        /// <param name="intervals">Interval with which the scheduling occurs</param>
         private static void DisplayWorkSchedule(int startWeek, int endWeek, int intervals)
         {
-            //one method to display schedule based on input parameters
             int counter = 0;
 
             for (int i = startWeek; startWeek <= endWeek; i++)

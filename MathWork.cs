@@ -2,6 +2,9 @@
 {
     internal class MathWork
     {
+        /// <summary>
+        /// Start Method, executing the Calculate() method as long as the user wants to
+        /// </summary>
         public void MathWorkStart() 
         {
             do
@@ -10,19 +13,52 @@
                 Calculate();
             } while (ExitCalculation() == true);
         }
-
+        /// <summary>
+        /// Calculate() Method, taking in two user-input numbers, putting them in order of size,
+        /// and passing them as parameters into the other MathWork methods
+        /// </summary>
         private static void Calculate()
         {
-            //takes two user input numbers
             Console.WriteLine();
             Console.WriteLine("Give me two numbers!");
-            
-            Console.Write("The first number: ");
-            int numberOne = Convert.ToInt32(Console.ReadLine());
-            Console.Write("and the second number: ");
-            int numberTwo = Convert.ToInt32(Console.ReadLine());
 
-            //set start and end numbers based on size
+            string readResult;
+            bool validInput;
+
+            int numberOne = 0;
+            Console.Write("The first number: ");
+            do
+            {
+                readResult = Console.ReadLine();
+                if (int.TryParse(readResult, out _))
+                {
+                    numberOne = Convert.ToInt32(readResult);
+                    validInput = true;
+                }
+                else
+                {
+                    validInput = false;
+                    Console.WriteLine("Try again. Enter a proper number for the calculations!");
+                }
+            } while (validInput == false);
+
+            int numberTwo = 0;
+            Console.Write("and the second number: ");
+            do
+            {
+                readResult = Console.ReadLine();
+                if (int.TryParse(readResult, out _))
+                {
+                    numberTwo = Convert.ToInt32(readResult);
+                    validInput = true;
+                }
+                else
+                {
+                    validInput = false;
+                    Console.WriteLine("Try again. Enter a proper number for the calculations!");
+                }
+            } while (validInput == false);
+
             int startNumber;
             int endNumber;
             if (numberOne < numberTwo)
@@ -36,15 +72,20 @@
                 startNumber = numberTwo;
             }
 
-            //following methods, taking these integers as parameters
             Console.WriteLine($"The sum of numbers between {startNumber} and {endNumber} is {SumNumbers(startNumber, endNumber)}");
             PrintEvenNumbers(startNumber, endNumber);
             PrintOddNumbers(startNumber, endNumber);
             CalculateSquareRoots(startNumber, endNumber);
         }
+
+        /// <summary>
+        /// Takes user input numbers and prints the sum of all the numbers between those two
+        /// </summary>
+        /// <param name="start">User input start number</param>
+        /// <param name="end">User input end number</param>
+        /// <returns>Int sum of all numbers between the two params</returns>
         private static int SumNumbers(int start, int end)
         {
-            //calculates the sum of all numbers between start and end numbers
             int sum = 0;
 
             for (int i = 0; start <= end; i++)
@@ -56,9 +97,13 @@
             return sum;
         }
 
+        /// <summary>
+        /// Takes user input numbers and prints the all even numbers between those two
+        /// </summary>
+        /// <param name="num1">User input start number</param>
+        /// <param name="num2">User input end number</param>
         private static void PrintEvenNumbers(int num1, int num2)
         {
-            //prints all even numbers between start and end numbers
             Console.WriteLine();
             Console.WriteLine($"****Even numbers between {num1} and {num2}");
 
@@ -73,9 +118,14 @@
             }
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// Takes user input numbers and prints the all odd numbers between those two
+        /// </summary>
+        /// <param name="num1">User input start number</param>
+        /// <param name="num2">User input end number</param>
         private static void PrintOddNumbers(int num1, int num2)
         {
-            //prints all odd numbers between start and end numbers
             Console.WriteLine();
             Console.WriteLine($"****Odd numbers between {num1} and {num2}");
 
@@ -90,12 +140,18 @@
             }
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// Takes user input numbers and, with a nested loop, 
+        /// calculates the square root of all numbers between those two.
+        /// </summary>
+        /// <param name="num1">User input start number</param>
+        /// <param name="num2">User input end number</param>
         private static void CalculateSquareRoots(int num1, int num2) 
         {
             Console.WriteLine();
             Console.WriteLine($"**** Square Roots ****");
 
-            //nested loop calculating the square root of all numbers between start and end numbers 
             for (int i = 0; num1 <= num2; i++)
             {
                 if (num1.ToString().Length == 1)
@@ -109,38 +165,45 @@
 
                 for (int j = num1; j <= num2; j++)
                 {
-                    double sqrtValue = Math.Sqrt(j); //square root of value
-                    double roundValue = Math.Round(sqrtValue, 2, MidpointRounding.AwayFromZero); //round down
-                    Console.Write($"  {roundValue:0.00}"); //and display with the correct amount of decimals
+                    double sqrtValue = Math.Sqrt(j);
+                    double roundValue = Math.Round(sqrtValue, 2, MidpointRounding.AwayFromZero);
+                    Console.Write($"  {roundValue:0.00}");
                 }
                 Console.WriteLine();
                 num1++;
             }
         }
+
+        /// <summary>
+        /// Method asking for user input, for whether to stay or leave the MathWork method
+        /// </summary>
+        /// <returns>bool answer, true or false, staying inside or exiting the loop</returns>
         private static bool ExitCalculation()
         {
             Console.WriteLine();
             Console.WriteLine("Exit Math Work? (y/n)");
 
-            bool validInput = true;
-            bool answer = false;
+            bool validInput;
+            bool answer;
 
-            //check for valid user input
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();
                 if (readResult == "y")
                 {
-                    answer = false; //wants to exit
+                    validInput = true;
+                    answer = false;
                 }
                 else if (readResult == "n")
                 {
-                    answer = true; //wants to stay
+                    validInput = true;
+                    answer = true;
                 }
                 else
                 {
                     Console.WriteLine("Please try again by entering yes or no. Do you want to continue? (y/n)");
                     validInput = false;
+                    answer = false;
                 }
             } while (validInput == false);
 

@@ -2,11 +2,17 @@
 {
     internal class StringFunctions
     {
+        /// <summary>
+        /// Start Method, creating the Main Menu
+        /// </summary>
         public void StringFunctionStart()
         {
             MainMenu();
         }
 
+        /// <summary>
+        /// Prints the Main Menu of String Functions, before going into the other class methods
+        /// </summary>
         private static void MainMenu()
         {
             do
@@ -20,6 +26,9 @@
             } while (RunAgain() == true);
         }
 
+        /// <summary>
+        /// Takes a user input string and outputs it in upper case with it's length in characters
+        /// </summary>
         private static void StringLength()
         {
             Console.WriteLine($"Write a text with any number of characters and press Enter.");
@@ -27,7 +36,7 @@
             var validInput = false;
             string text;
 
-            do // makes sure user input is not null
+            do
             {
                 text = Console.ReadLine();
                 if (text != null)
@@ -40,7 +49,6 @@
                 }
             } while (validInput == false);
             
-            //prints the sentence in all-caps and its length 
             int length = text.Length;
 
             Console.WriteLine();
@@ -50,18 +58,20 @@
             Console.WriteLine($"Number of chars = {length}");
         }
 
+        /// <summary>
+        /// Gives 'Fortune Telling' through user input number, entering into a switch case outputing sentences
+        /// </summary>
         private static void PredictMyDay()
         {
             Console.WriteLine(" ********** The Fortune Teller ********** ");
             Console.WriteLine();
             Console.WriteLine($"Let me predict your day!\nSelect a number between 1 and 7:");
-            Console.Write("Your choice: ");
 
             var validInput = false;
             string readResult;
             int menuChoice = 0;
 
-            do //checks for valid user input, for a number between 1 and 7
+            do
             {
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
@@ -80,7 +90,6 @@
                 }
             } while (validInput == false);
 
-            //switch case with lines for the seven days
             switch (menuChoice)
             {
                 case 1:
@@ -107,25 +116,32 @@
             }
         }
 
+        /// <summary>
+        /// Method asking for user input, for whether to stay or leave the StringFunctions method
+        /// </summary>
+        /// <returns>bool answer, true or false, staying inside or exiting the loop</returns>
         private static bool RunAgain()
         {
             Console.WriteLine();
             Console.WriteLine("Do you want to continue? (y/n)");
 
-            bool validInput = true;
+            bool validInput;
             bool answer = false;
 
-            //checks for valid user input
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();
                 if (readResult == "y")
                 {
                     answer = true;
+                    validInput = true;
                 }
                 else if (readResult == "n")
                 {
                     answer = false;
+                    validInput = true;
+                    Console.WriteLine();
+                    Console.WriteLine("Exiting String Functions...");
                 }
                 else
                 {
@@ -135,7 +151,6 @@
             } while (validInput == false);
 
             Console.WriteLine();
-            Console.WriteLine("Exiting String Functions...");
             HelperMethods.ConfirmationButton();
             Console.Clear();
 

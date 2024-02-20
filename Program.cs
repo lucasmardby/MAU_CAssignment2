@@ -4,9 +4,10 @@
 
     internal class Program
     {
-        //Console app Main Menu,
-        //Menu display method, loop that asks user after every Class Method if they want to exit or not.
-
+        /// <summary>
+        /// Main Method, creating the application Main Menu as long as the user wants to keep it open.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             do
@@ -15,6 +16,9 @@
             } while (ExitApplication() == false);
         }
 
+        /// <summary>
+        /// Prints the application Main Menu, with menu choices
+        /// </summary>
         private static void MainMenu()
         {
             Console.Clear();
@@ -29,9 +33,11 @@
             MenuChoices();
         }
 
+        /// <summary>
+        /// Main Menu choices, taking user input into a switch case, leading into the different assignment classes
+        /// </summary>
         private static void MenuChoices()
         {
-            //check for valid user input
             int menuChoice = 0;
             string readResult;
             var validInput = false;
@@ -51,7 +57,6 @@
                 }
             } while (validInput == false);
 
-            //switch case into the different class methods
             switch (menuChoice)
             {
                 case 1:
@@ -77,7 +82,12 @@
             }
         }
 
-        //method returning if user wants to exit or not
+        /// <summary>
+        /// Method checking for user input, to close or keep the application open.
+        /// </summary>
+        /// <returns>
+        /// Returns bool, true or false, depending on user input.
+        /// </returns>
         private static bool ExitApplication()
         {
             Console.Clear();
@@ -85,15 +95,14 @@
             Console.WriteLine(" ---- Exit Application? (y/n) ----");
 
             bool validInput = true;
-            bool answer = false;
-
-            //check for valid user input
+            bool answer;
+            
             do
             {
                 var readResult = Console.ReadLine().ToLower().Trim();
                 if (readResult == "y")
                 {
-                    answer = true; //wants to exit
+                    answer = true;
                     validInput = true;
 
                     Console.WriteLine();
@@ -103,7 +112,7 @@
                 }
                 else if (readResult == "n")
                 {
-                    answer = false; //wants to stay
+                    answer = false;
                 }
                 else
                 {

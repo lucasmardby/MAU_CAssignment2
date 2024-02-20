@@ -3,7 +3,9 @@
     internal class TemperatureConverter
     {
         private bool exitApplication = false;
-
+        /// <summary>
+        /// Start Method, creating the Main Menu as long as the user wants to keep it open
+        /// </summary>
         public void TemperatureConverterStart()
         {
             do
@@ -12,7 +14,9 @@
                 MainMenu();
             } while (exitApplication == false);
         }
-
+        /// <summary>
+        /// Prints the Main Menu of Temperature Converter, before going into the MenuChoices() method
+        /// </summary>
         private void MainMenu()
         {
             Console.WriteLine("----------");
@@ -25,6 +29,10 @@
 
             MenuChoices();
         }
+        /// <summary>
+        /// Main Menu choices, taking user input into a switch case, 
+        /// leading into the class methods for temperature conversion
+        /// </summary>
         private void MenuChoices()
         {
             int menuChoice = 0;
@@ -33,7 +41,6 @@
 
             do
             {
-                //check for valid user input
                 Console.Write("Your choice: ");
                 readResult = Console.ReadLine();
                 if (int.TryParse(readResult, out _))
@@ -67,9 +74,9 @@
                     break;
             }
         }
-
-        //two methods for conversion, adjusting the values, conversion calculations, and display intervals
-
+        /// <summary>
+        /// Method calculating Fahrenheit to Celcius, from 0 to 200 F
+        /// </summary>
         private static void FahrenheitToCelcius()
         {
             Console.WriteLine();
@@ -78,7 +85,7 @@
             int counter = 0;
             int columns = 3;
 
-            for (var i = 0; fahrenheit <= 210; i++)
+            for (var i = 0; fahrenheit <= 200; i++)
             {
                 float celsius = 5f / 9f * (fahrenheit - 32f);
                 string textOut = string.Format($"{fahrenheit,16:f2} F = {celsius,6:f2} C");
@@ -95,6 +102,9 @@
             Console.WriteLine();
             HelperMethods.ConfirmationButton();
         }
+        /// <summary>
+        /// Method calculating Celcius to Fahrenheit, from 0 to 100 C
+        /// </summary>
         private static void CelciusToFahrenheit()
         {
             Console.WriteLine();
